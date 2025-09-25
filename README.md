@@ -32,7 +32,7 @@ Concise, actionable competitive intelligence for product & GTM teams. This Strea
 
 ```powershell
 git clone <repo-url>
-cd D:\LLM\Demo-Projects-Rag-Agents\product_launch_intelligence_agent
+https://github.com/Mohamed-Noufal/product-launch-intelligence.git
 ```
 
 2. (Optional) Create and activate a virtual environment:
