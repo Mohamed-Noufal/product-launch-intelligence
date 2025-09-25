@@ -1,0 +1,16 @@
+streamlit>=1.28.0
+agno>=0.2.0
+python-dotenv>=1.0.0
+firecrawl>=4.3.0
+google-generativeai
+google-genai
+plotly
+requests>=2.31.0
+# Add if you want PDF generation later:
+pdfkit>=1.0.0
+weasyprint>=60.0
+reportlab>=3.6.12
+matplotlib>=3.7.1
+jinja2>=3.0
+weasyprint>=58.0
+markdown2>=2.4.0

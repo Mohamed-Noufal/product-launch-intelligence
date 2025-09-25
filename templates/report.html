@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        @page { size: A4; margin: 1in }
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; line-height: 1.45; color:#222 }
+        .container { padding: 1in }
+        .cover { text-align: center; margin-top: 2in }
+        h1 { font-size: 28pt; margin-bottom: 0 }
+        h2 { font-size: 16pt; margin-top: 18px; color: #2d3e50 }
+        .kpi { display: inline-block; width: 220px; margin: 10px; padding: 12px; background: #f7f9fb; border-radius: 8px; text-align: center }
+        .kpi .value { font-size: 22pt; font-weight: 700 }
+        .kpi .label { font-size: 10pt; color: #555 }
+        .kpi .delta { font-size: 9pt; color: #888 }
+        .section { margin-top: 18px }
+        img.chart { width: 100%; margin-bottom: 18px }
+        footer { position: fixed; bottom: 0; left: 0; right:0; text-align: center; font-size: 9pt; color: #666 }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cover">
+            <h1>Product Intelligence Report</h1>
+            <h2>{{ company }}</h2>
+            <p>Generated on {{ generated_on }}</p>
+        </div>
+
+        <h2>Executive Summary</h2>
+        <ul>
+            {% for point in exec_summary %}
+            <li>{{ point }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Key KPIs</h2>
+        <div class="kpis" style="display:flex; flex-wrap:wrap; gap:12px;">
+            {% for kpi in kpis %}
+            <div class="kpi">
+                <div class="value">{{ kpi.value }}</div>
+                <div class="label">{{ kpi.label }}</div>
+                <div class="delta">{{ kpi.delta }}</div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2>Charts</h2>
+        {% for chart in charts_b64 %}
+            <img class="chart" src="{{ chart }}">
+        {% endfor %}
+
+        {% for section in sections %}
+        <div class="section">
+            <h2>{{ section.title }}</h2>
+            <div class="section-body">{{ section.html | safe }}</div>
+        </div>
+        {% endfor %}
+
+        <h2>Sources</h2>
+        <ul>
+            {% for s in sources %}
+            <li>{{ s }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <footer>
+        Generated on {{ generated_on }} — Page <span class="pageNumber"></span>
+    </footer>
+</body>
+</html>
