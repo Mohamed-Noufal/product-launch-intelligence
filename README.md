@@ -47,7 +47,7 @@ python -m venv venv
 ```powershell
 pip install -r requirements.txt
 ```
-
+,
 4. Provide API keys (either `.env` or in-app sidebar).
 
 5. Run the app:
