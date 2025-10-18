@@ -6,7 +6,7 @@
 	<img src="assets/hero.png" alt="Product Intelligence Hub" style="max-width:100%; height:auto; border-radius:8px;" />
 </p>
 
-> Tip: Save...
+> Tip: 
 
 Concise, actionable competitive intelligence for product & GTM teams. This Streamlit app coordinates specialized AI analysts to gather public web data, synthesize findings, and produce executive-ready reports.
 
